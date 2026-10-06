@@ -1,13 +1,13 @@
 import HomePage from "../pages/HomePage";
 import ContactPage from "../pages/ContactPage";
 
-describe("Contact Page Tests", () => {
+describe("Contact form", () => {
   const home = new HomePage();
   const contact = new ContactPage();
 
   const data = require("../fixtures/contact.json");
 
-  it("TC1 -Contact form shows required-field errors and clears them after valid input", () => {
+  it("TC1: shows required-field errors and clears them after valid input", () => {
     cy.visit("/");
 
     home.openContactPage();
@@ -35,7 +35,7 @@ describe("Contact Page Tests", () => {
   });
 
   for (let i = 1; i <= 5; i++) {
-    it(`TC 2 - Submitting a valid contact form displays the personalized success message - run ${i}`, () => {
+    it(`TC2: submits valid contact details and displays the personalized success message (run ${i})`, () => {
       cy.visit("/");
 
       home.openContactPage();

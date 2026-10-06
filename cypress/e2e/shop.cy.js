@@ -8,12 +8,12 @@ function currencyToCents(text) {
   return Number(match[1]) * 100 + Number((match[2] || "").padEnd(2, "0"));
 }
 
-describe("Shop Tests", () => {
+describe("Shopping cart", () => {
   const home = new HomePage();
   const shop = new ShopPage();
   const cart = new CartPage();
 
-  it("TC 3 - Cart page validations", () => {
+  it("TC3: calculates item subtotals and the grand total correctly", () => {
     cy.visit("/");
 
     home.openShopPage();
