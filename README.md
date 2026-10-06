@@ -33,6 +33,10 @@ Run all tests headlessly:
 npm run cypress:run
 ```
 
+## Continuous integration
+
+GitHub Actions runs the Cypress suite on pushes and pull requests targeting `main`, and can also be started manually from the Actions tab. The workflow uses Node.js 22, installs dependencies with `npm ci`, and runs the suite headlessly. Mochawesome JSON reports are uploaded as a workflow artifact and retained for 14 days.
+
 ## Test reports
 
 Cypress writes Mochawesome JSON reports to `cypress/reports`. Each run creates a separate report file.
